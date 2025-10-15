@@ -95,3 +95,24 @@ Akira Katsuki a grandi dans un environnement difficile, apprenant à se défendr
 —————————
 🔥Encouragement : 150
 💊Soin : 100
+
+## Techniques :
+
+### Technique 1 :
+
+🔸Possesseur de la technique : Akira Katsuki
+
+🔹Nom de la technique : Récupération Fantôme
+
+🔸Rang : C
+
+🔹Élément : Feu
+
+🔸Type : Défense
+
+🔹Caractéristiques spéciales : Blocage de tir
+
+🔸Description :
+Akira se positionne parfaitement sur la trajectoire de la balle pour la bloquer/l'intercepter/la récupérer sans pour autant être remarquée par le possesseur de la balle/la personne ayant tiré/dribblé.
+
+🖼️ Image de la technique : 
