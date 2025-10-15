@@ -994,7 +994,7 @@ nav {
 
 /* === TECHNIQUES SECTION === */
 .techniques {
-    background-color: white;
+    background-color: var(--light-gray);
     color: white;
     position: relative;
     overflow: hidden;
