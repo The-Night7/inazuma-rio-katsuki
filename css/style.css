@@ -45,7 +45,7 @@ html {
 }
 
 body {
-    font-family: var(--font-body);
+    font-family: var(--font-body), serif;
     background-color: var(--light);
     color: var(--dark);
     line-height: 1.6;
@@ -54,7 +54,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-title);
+    font-family: var(--font-title), serif;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -203,7 +203,7 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    width: 0%;
+    width: 0;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
@@ -691,6 +691,18 @@ nav {
     display: flex;
     justify-content: center;
     margin-bottom: 3rem;
+    text-align: center;
+}
+
+.pt-explanation {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--gray);
+    font-size: 0.9rem;
+    text-align: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .stat-total {
@@ -808,6 +820,8 @@ nav {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--dark);
+    text-align: center;
+    width: 100%;
 }
 
 .stat-circle.large .stat-number {
@@ -822,6 +836,7 @@ nav {
     margin-top: 1rem;
     font-weight: 600;
     color: var(--dark);
+    text-align: center;
 }
 
 .stats-details {
@@ -878,6 +893,16 @@ nav {
     max-width: 600px;
     margin: 0 auto;
     height: 400px;
+}
+
+/* Amélioration pour l'affichage des statistiques */
+.stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
 }
 
 /* === TEAM SECTION === */
