@@ -992,6 +992,98 @@ nav {
     min-width: 140px;
 }
 
+/* === TECHNIQUES SECTION === */
+.techniques {
+    background-color: var(--dark);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.techniques::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/pattern.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.techniques-content {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.technique-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.technique-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.technique-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.technique-title {
+    margin-bottom: 1.5rem;
+}
+
+.technique-title h3 {
+    color: var(--primary);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.technique-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.technique-card p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.technique-card p:last-child {
+    margin-bottom: 0;
+}
+
+.technique-card p span {
+    font-weight: 700;
+    color: var(--primary);
+    margin-right: 0.5rem;
+}
+
+.technique-card p span.fire {
+    color: var(--fire);
+}
+
 /* === TOURNAMENT SECTION === */
 .tournament {
     background-color: var(--light);
@@ -1212,7 +1304,7 @@ footer {
         font-size: 2.8rem;
     }
     
-    .character-profile, .team-content, .tournament-structure {
+    .character-profile, .team-content, .tournament-structure, .techniques-content {
         flex-direction: column;
     }
     
