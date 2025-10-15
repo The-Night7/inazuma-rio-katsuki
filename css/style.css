@@ -873,12 +873,24 @@ nav {
     grid-template-columns: repeat(2, 1fr);
 }
 
+/* Center the radar chart container */
 .stats-radar {
     background-color: white;
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Centering content horizontally */
+    align-items: center; /* Centering content vertically */
+    height: 400px; /* Adjust based on your preference */
 }
+
+.radar-chart {
+    width: 100%;
+    max-width: 600px; /* Control the size of the chart */
+    height: 100%;
+}
+
 
 .stats-radar h3 {
     color: var(--primary);
@@ -886,13 +898,6 @@ nav {
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--light-gray);
-}
-
-.radar-chart {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    height: 400px;
 }
 
 /* Amélioration pour l'affichage des statistiques */
