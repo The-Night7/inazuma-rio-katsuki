@@ -55,7 +55,7 @@ thumbnails.forEach(thumbnail => {
 
 // === Intersection Observer for Animations ===
 const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.story-card, .chapter, .info-card, .team-card, .match-card');
+    const elements = document.querySelectorAll('.story-card, .chapter, .info-card, .team-card, .match-card, .stats-group, .stats-radar');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -75,6 +75,21 @@ const animateOnScroll = () => {
 
 // === Stats Animation ===
 const animateStats = () => {
+    // Statistiques définies dans le README
+    const statsData = {
+        total: { max: 30000, value: 2000 }, // Valeur PT totale
+        frappe: { max: 15000, value: 150 },
+        dribble: { max: 15000, value: 4150 },
+        passe: { max: 15000, value: 2100 },
+        interception: { max: 15000, value: 7100 },
+        defense: { max: 15000, value: 12150 },
+        arret: { max: 15000, value: 150 },
+        galvanisation: { max: 1000, value: 150 },
+        antiTactique: { max: 1000, value: 100 },
+        encouragement: { max: 1000, value: 150 },
+        soin: { max: 1000, value: 100 }
+    };
+    
     const statCircles = document.querySelectorAll('.stat-fill');
     
     const observer = new IntersectionObserver((entries) => {
@@ -82,13 +97,61 @@ const animateStats = () => {
             if (entry.isIntersecting) {
                 entry.target.style.transition = 'stroke-dashoffset 1.5s ease-out';
                 
-                // Get the value from the class name
-                if (entry.target.classList.contains('defense')) {
-                    entry.target.style.strokeDashoffset = 'calc(377 - (377 * 95) / 100)';
-                } else if (entry.target.classList.contains('technique')) {
-                    entry.target.style.strokeDashoffset = 'calc(377 - (377 * 85) / 100)';
-                } else if (entry.target.classList.contains('power')) {
-                    entry.target.style.strokeDashoffset = 'calc(377 - (377 * 88) / 100)';
+                // Déterminer la statistique et calculer le dashoffset
+                if (entry.target.classList.contains('total')) {
+                    const totalCircumference = 439.6; // 2*PI*70
+                    const percentage = statsData.total.value / statsData.total.max;
+                    entry.target.style.strokeDashoffset = totalCircumference - (totalCircumference * percentage);
+                } 
+                else if (entry.target.classList.contains('frappe')) {
+                    const circumference = 377; // 2*PI*60
+                    const percentage = statsData.frappe.value / statsData.frappe.max;
+                    entry.target.style.strokeDashoffset = circumference - (circumference * percentage);
+                }
+                else if (entry.target.classList.contains('dribble')) {
+                    const circumference = 377;
+                    const percentage = statsData.dribble.value / statsData.dribble.max;
+                    entry.target.style.strokeDashoffset = circumference - (circumference * percentage);
+                }
+                else if (entry.target.classList.contains('passe')) {
+                    const circumference = 377;
+                    const percentage = statsData.passe.value / statsData.passe.max;
+                    entry.target.style.strokeDashoffset = circumference - (circumference * percentage);
+                }
+                else if (entry.target.classList.contains('interception')) {
+                    const circumference = 377;
+                    const percentage = statsData.interception.value / statsData.interception.max;
+                    entry.target.style.strokeDashoffset = circumference - (circumference * percentage);
+                }
+                else if (entry.target.classList.contains('defense')) {
+                    const circumference = 377;
+                    const percentage = statsData.defense.value / statsData.defense.max;
+                    entry.target.style.strokeDashoffset = circumference - (circumference * percentage);
+                }
+                else if (entry.target.classList.contains('arret')) {
+                    const circumference = 377;
+                    const percentage = statsData.arret.value / statsData.arret.max;
+                    entry.target.style.strokeDashoffset = circumference - (circumference * percentage);
+                }
+                else if (entry.target.classList.contains('galvanisation')) {
+                    const circumference = 314.2; // 2*PI*50
+                    const percentage = statsData.galvanisation.value / statsData.galvanisation.max;
+                    entry.target.style.strokeDashoffset = circumference - (circumference * percentage);
+                }
+                else if (entry.target.classList.contains('anti-tactique')) {
+                    const circumference = 314.2;
+                    const percentage = statsData.antiTactique.value / statsData.antiTactique.max;
+                    entry.target.style.strokeDashoffset = circumference - (circumference * percentage);
+                }
+                else if (entry.target.classList.contains('encouragement')) {
+                    const circumference = 314.2;
+                    const percentage = statsData.encouragement.value / statsData.encouragement.max;
+                    entry.target.style.strokeDashoffset = circumference - (circumference * percentage);
+                }
+                else if (entry.target.classList.contains('soin')) {
+                    const circumference = 314.2;
+                    const percentage = statsData.soin.value / statsData.soin.max;
+                    entry.target.style.strokeDashoffset = circumference - (circumference * percentage);
                 }
                 
                 observer.unobserve(entry.target);
@@ -99,10 +162,60 @@ const animateStats = () => {
     });
     
     statCircles.forEach(circle => {
-        // Initialize with full circle
-        circle.style.strokeDashoffset = '377';
+        // Initialiser avec un cercle complet (vide)
         observer.observe(circle);
     });
+};
+
+// === Radar Chart pour les statistiques ===
+const createRadarChart = () => {
+    const ctx = document.getElementById('radarChart');
+    
+    if (ctx) {
+        const radarChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Frappe', 'Dribble', 'Passe', 'Interception', 'Défense', 'Arrêt'],
+                datasets: [{
+                    label: 'Akira Katsuki',
+                    data: [150, 4150, 2100, 7100, 12150, 150],
+                    backgroundColor: 'rgba(255, 107, 0, 0.2)',
+                    borderColor: 'rgba(255, 107, 0, 1)',
+                    pointBackgroundColor: 'rgba(255, 107, 0, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(255, 107, 0, 1)'
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: {
+                            display: true,
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 15000,
+                        ticks: {
+                            stepSize: 3000
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.raw;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
 };
 
 // === Lightning Effect ===
@@ -190,12 +303,13 @@ document.addEventListener('DOMContentLoaded', () => {
     animateOnScroll();
     animateStats();
     triggerLightning();
+    createRadarChart();
     
     // Add toggle class for burger animation
     burger.classList.add('toggle-ready');
     
     // Add animation classes
-    document.querySelectorAll('.story-card, .chapter, .info-card, .team-card, .match-card').forEach(element => {
+    document.querySelectorAll('.story-card, .chapter, .info-card, .team-card, .match-card, .stats-group, .stats-radar').forEach(element => {
         element.classList.add('fade-in-element');
     });
     

@@ -16,6 +16,18 @@
     --earth: #8B4513;
     --wind: #7FFF00;
     
+    /* Nouvelles couleurs pour les statistiques */
+    --frappe: #FF5252;
+    --dribble: #4CAF50;
+    --passe: #2196F3;
+    --interception: #9C27B0;
+    --defense: #FF9800;
+    --arret: #607D8B;
+    --galvanisation: #E91E63;
+    --anti-tactique: #673AB7;
+    --encouragement: #FFC107;
+    --soin: #00BCD4;
+    
     --font-title: 'Oswald', sans-serif;
     --font-body: 'Montserrat', sans-serif;
 }
@@ -332,7 +344,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('img/field-bg-placeholder.jpg');
+    background-image: url('img/bg_terrain.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.2;
@@ -430,7 +442,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('img/pattern-placeholder.png');
+    background-image: url('img/pattern.jpg');
     background-size: 200px;
     opacity: 0.05;
     z-index: 0;
@@ -645,6 +657,229 @@ nav {
     margin-left: 5px;
 }
 
+/* === STATS SECTION === */
+.stats-section {
+    background-color: var(--light);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/stats_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    position: relative;
+    z-index: 1;
+}
+
+.stats-overview {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.stat-total {
+    text-align: center;
+}
+
+.stat-circle {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+}
+
+.stat-circle.large {
+    width: 160px;
+    height: 160px;
+}
+
+.stat-circle.medium {
+    width: 120px;
+    height: 120px;
+}
+
+.stat-circle svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.stat-circle circle {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+}
+
+.stat-circle circle:first-child {
+    stroke: rgba(0, 0, 0, 0.1);
+}
+
+.stat-fill {
+    transition: stroke-dashoffset 1.5s ease-out;
+}
+
+.stat-fill.total {
+    stroke: var(--primary);
+    stroke-dasharray: 439.6; /* 2*PI*r (r=70) */
+    stroke-dashoffset: 439.6; /* Initialement complètement vide */
+}
+
+.stat-fill.frappe {
+    stroke: var(--frappe);
+    stroke-dasharray: 377; /* 2*PI*r (r=60) */
+    stroke-dashoffset: 377; /* Initialement complètement vide */
+}
+
+.stat-fill.dribble {
+    stroke: var(--dribble);
+    stroke-dasharray: 377;
+    stroke-dashoffset: 377;
+}
+
+.stat-fill.passe {
+    stroke: var(--passe);
+    stroke-dasharray: 377;
+    stroke-dashoffset: 377;
+}
+
+.stat-fill.interception {
+    stroke: var(--interception);
+    stroke-dasharray: 377;
+    stroke-dashoffset: 377;
+}
+
+.stat-fill.defense {
+    stroke: var(--defense);
+    stroke-dasharray: 377;
+    stroke-dashoffset: 377;
+}
+
+.stat-fill.arret {
+    stroke: var(--arret);
+    stroke-dasharray: 377;
+    stroke-dashoffset: 377;
+}
+
+.stat-fill.galvanisation {
+    stroke: var(--galvanisation);
+    stroke-dasharray: 314.2; /* 2*PI*r (r=50) */
+    stroke-dashoffset: 314.2;
+}
+
+.stat-fill.anti-tactique {
+    stroke: var(--anti-tactique);
+    stroke-dasharray: 314.2;
+    stroke-dashoffset: 314.2;
+}
+
+.stat-fill.encouragement {
+    stroke: var(--encouragement);
+    stroke-dasharray: 314.2;
+    stroke-dashoffset: 314.2;
+}
+
+.stat-fill.soin {
+    stroke: var(--soin);
+    stroke-dasharray: 314.2;
+    stroke-dashoffset: 314.2;
+}
+
+.stat-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.stat-circle.large .stat-number {
+    font-size: 2rem;
+}
+
+.stat-circle.medium .stat-number {
+    font-size: 1.2rem;
+}
+
+.stat-name {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.stats-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stats-group {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stats-group h3 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stats-grid.small {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.stats-radar {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stats-radar h3 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.radar-chart {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 400px;
+}
+
 /* === TEAM SECTION === */
 .team {
     background-color: var(--dark);
@@ -660,7 +895,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('img/team-bg-placeholder.jpg');
+    background-image: url('img/bg_royale_academie.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.1;
@@ -725,61 +960,6 @@ nav {
     text-align: center;
     flex: 1;
     min-width: 140px;
-}
-
-.stat-circle {
-    width: 140px;
-    height: 140px;
-    position: relative;
-    margin: 0 auto;
-}
-
-.stat-circle svg {
-    width: 140px;
-    height: 140px;
-    transform: rotate(-90deg);
-}
-
-.stat-circle circle {
-    fill: none;
-    stroke-width: 10;
-    stroke-dasharray: 377; /* 2*PI*r */
-    stroke-linecap: round;
-    transform: translate(0, 0);
-}
-
-.stat-circle circle:first-child {
-    stroke: rgba(255, 255, 255, 0.1);
-}
-
-.stat-fill.defense {
-    stroke: var(--primary);
-    stroke-dashoffset: calc(377 - (377 * 95) / 100); /* (2*PI*r) - ((2*PI*r) * value) / 100 */
-}
-
-.stat-fill.technique {
-    stroke: var(--secondary);
-    stroke-dashoffset: calc(377 - (377 * 85) / 100);
-}
-
-.stat-fill.power {
-    stroke: var(--accent);
-    stroke-dashoffset: calc(377 - (377 * 88) / 100);
-}
-
-.stat-number {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.stat-name {
-    margin-top: 1rem;
-    font-weight: 600;
-    color: var(--light-gray);
 }
 
 /* === TOURNAMENT SECTION === */
@@ -1009,6 +1189,10 @@ footer {
     .stat-item {
         min-width: 120px;
     }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1078,6 +1262,10 @@ footer {
     .footer-links {
         width: 100%;
     }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -1112,6 +1300,10 @@ footer {
     }
     
     .highlights-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid.small {
         grid-template-columns: 1fr;
     }
 }

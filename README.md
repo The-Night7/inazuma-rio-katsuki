@@ -29,7 +29,7 @@ Parfait ! Je vais adapter la fiche en conséquence pour qu’**Akira Katsuki** s
 
 ---
 
-### 📜 Fiche Joueur(OC) - Inazuma Eleven ⚽
+## 📜 Fiche Joueur(OC) - Inazuma Eleven ⚽
 
 *****Informations Personnelles*****
 
@@ -81,3 +81,17 @@ Akira Katsuki a grandi dans un environnement difficile, apprenant à se défendr
 * Images 3 et 4 : Moments de tension, montrant son côté combatif et vigilant, idéale pour sa position de défense centrale.
 * Images 6 et 7 : Elle est dans son élément, calme mais prête à réagir à toute attaque.
 
+## Stats :
+🟢PT : 2 000
+💥Frappe : 150
+🌀Dribble : 4 150
+⚽️Passe : 2 100
+🔰Interception : 7 100
+🛡️Défense : 12 150
+🧤Arrêt : 150
+—————————
+⚡️Galvanisation : 150
+🀄️Anti-Tactique : 100
+—————————
+🔥Encouragement : 150
+💊Soin : 100
