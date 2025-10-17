@@ -224,6 +224,11 @@ section {
     color: white;
 }
 
+.btn.special {
+    background-color: #6a0dad; /* Couleur violette pour le Château Oblivion */
+    color: white;
+}
+
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -1196,6 +1201,383 @@ nav {
     color: var(--gray);
 }
 
+/* === CHATEAU OBLIVION SECTION === */
+/* Section Château Intro */
+.chateau {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px; /* Pour compenser la navbar fixe */
+}
+
+.chateau::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/chateau_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.chateau-content {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.chateau-description {
+    flex: 1;
+    min-width: 300px;
+}
+
+.intro-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+.chateau-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.organization-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.audio-player {
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.audio-player p {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.audio-player audio {
+    width: 100%;
+}
+
+/* Section Organisation */
+.organization {
+    background-color: var(--light);
+    position: relative;
+}
+
+.org-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.org-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.org-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.org-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.org-card h3 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.namine-image, .hearts-image {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.namine-img, .hearts-img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Règles */
+.rules {
+    background-color: var(--dark);
+    color: white;
+    position: relative;
+}
+
+.rules-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.rules-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rules-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.rules-card ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    list-style-type: disc;
+}
+
+.rules-card li {
+    margin-bottom: 0.5rem;
+}
+
+.rules-note {
+    font-style: italic;
+    color: var(--primary-light);
+    margin-top: 1rem;
+}
+
+.castle-map {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.map-item {
+    padding: 0.8rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.map-item.secret {
+    background-color: var(--primary-dark);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-item.secret::before {
+    content: '?';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+}
+
+.map-arrow {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+/* Section Mémoire */
+.memory {
+    background-color: var(--light);
+    position: relative;
+}
+
+.memory-content {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.memory-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.memory-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.memory-description {
+    flex: 2;
+    min-width: 300px;
+}
+
+.memory-description h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.memory-scene {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.memory-scene p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.memory-reflection {
+    background-color: rgba(var(--primary-dark), 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary);
+}
+
+.memory-reflection h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Section Prochaines Étapes */
+.next-steps {
+    background-color: var(--dark);
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.next-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.next-content p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Section Teaser du Château sur la page d'accueil */
+.chateau-teaser {
+    background-color: #1a1a1a;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.chateau-teaser::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/chateau_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.chateau-teaser-content {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.teaser-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teaser-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.teaser-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.teaser-info h3 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.teaser-info p:first-of-type {
+    font-style: italic;
+    color: var(--primary-light);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
 /* === FOOTER === */
 footer {
     background-color: var(--dark);
@@ -1305,7 +1687,7 @@ footer {
         font-size: 2.8rem;
     }
     
-    .character-profile, .team-content, .tournament-structure, .techniques-content {
+    .character-profile, .team-content, .tournament-structure, .techniques-content, .chateau-content, .memory-content {
         flex-direction: column;
     }
     
@@ -1365,7 +1747,7 @@ footer {
         justify-content: center;
     }
     
-    .story-container {
+    .story-container, .org-content, .rules-content {
         flex-direction: column;
     }
     
