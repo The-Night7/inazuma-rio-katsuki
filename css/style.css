@@ -1037,6 +1037,8 @@ nav {
     max-width: 500px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    object-fit: cover;  /* Assure que les images sont bien cadrées */
+    max-height: 300px;  /* Limite la hauteur pour une meilleure cohérence */
 }
 
 .technique-info {
@@ -1055,20 +1057,20 @@ nav {
     letter-spacing: 1px;
 }
 
+/* Modification pour la section techniques */
 .technique-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background-color: white;  /* Fond blanc au lieu de transparent */
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     margin-bottom: 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Changé pour une bordure plus visible */
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .technique-card p {
     margin-bottom: 0.8rem;
     line-height: 1.6;
-    color: var(--dark); /* Ajout explicite de la couleur noire pour le texte */
+    color: var(--dark);  /* Assure que le texte est noir */
 }
 
 .technique-card p:last-child {
@@ -1083,6 +1085,24 @@ nav {
 
 .technique-card p span.fire {
     color: var(--fire);
+}
+
+/* Amélioration pour l'élément air */
+.skill-value.air {
+    color: var(--wind);
+    font-weight: 700;
+    position: relative;
+}
+
+.skill-value.air::after {
+    content: '💨';
+    margin-left: 5px;
+}
+
+/* Amélioration pour le bouton spécial */
+.btn.special {
+    background-color: var(--accent);
+    color: var(--dark);
 }
 
 /* === TOURNAMENT SECTION === */
