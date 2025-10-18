@@ -7,7 +7,7 @@
     --secondary-light: #3D8FE8;
     --secondary-dark: #004C99;
     --accent: #FFD700;
-    --dark: #1A1A1A;
+    --dark: rgba(0, 0, 0, 0);
     --light: #F5F5F5;
     --gray: #777777;
     --light-gray: #EEEEEE;
@@ -1171,7 +1171,7 @@ nav {
 
 .match-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .match-teams {
