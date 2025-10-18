@@ -1309,7 +1309,7 @@ nav {
 
 /* Section Organisation */
 .organization {
-    background-color: var(--light);
+    background-color: var(--dark);
     position: relative;
 }
 
@@ -1324,7 +1324,7 @@ nav {
 .org-card {
     flex: 1;
     min-width: 300px;
-    background-color: white;
+    background-color: var(--dark);
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -1456,7 +1456,7 @@ nav {
 
 /* Section Mémoire */
 .memory {
-    background-color: var(--light);
+    background-color: var(--dark);
     position: relative;
 }
 
@@ -1496,7 +1496,7 @@ nav {
 }
 
 .memory-scene {
-    background-color: white;
+    background-color: black;
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
