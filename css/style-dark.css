@@ -1093,6 +1093,10 @@ nav {
     color: var(--fire);
 }
 
+.technique-card p span.air {
+    color: var(--wind);
+}
+
 /* Amélioration pour l'élément air */
 .skill-value.air {
     color: var(--wind);
