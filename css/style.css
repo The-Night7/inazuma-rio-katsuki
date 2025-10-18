@@ -918,7 +918,7 @@ nav {
 /* === TEAM SECTION === */
 .team {
     background-color: var(--dark);
-    color: white;
+    color: black;
     position: relative;
     overflow: hidden;
 }
