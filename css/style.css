@@ -824,7 +824,7 @@ nav {
     transform: translate(-50%, -50%);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--dark);
+    color: var(--light);
     text-align: center;
     width: 100%;
 }
@@ -840,7 +840,7 @@ nav {
 .stat-name {
     margin-top: 1rem;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--light);
     text-align: center;
 }
 
